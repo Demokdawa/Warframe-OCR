@@ -49,10 +49,14 @@ def create_mask(theme, img):
 
 def prepare_img(img_src):
     upscaled = cv2.resize(img_src, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
-    kernel = np.ones((1, 1), np.uint8)
-    img = cv2.dilate(upscaled, kernel, iterations=1)
-    kernelled = cv2.erode(img, kernel, iterations=1)
-    ret, imgtresh = cv2.threshold(create_mask("test", kernelled), 218, 255, cv2.THRESH_BINARY_INV)
+    gray = cv2.cvtColor(upscaled, cv2.COLOR_BGR2GRAY)
+    #kernel = np.ones((1, 1), np.uint8)
+    #img = cv2.dilate(upscaled, kernel, iterations=1)
+    #kernelled = cv2.erode(img, kernel, iterations=1)
+    cv2.imwrite("theme_gray.png", gray)
+    ret, imgtresh = cv2.threshold(create_mask('Fortuna', upscaled), 127, 255, cv2.THRESH_BINARY_INV)
+    blur = cv2.medianBlur(imgtresh,5)
+    cv2.imwrite("theme_blur.png", blur)
     cv2.imwrite("theme_result.png", imgtresh)
 
 
