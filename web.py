@@ -40,6 +40,8 @@ def processing(sql_data, cursor):
         new_l = list(new_tup)
         results_f.append(new_l)
 
+    print(results_f)
+
     for element in results_f: # Pour chaque row
         list1 = []
         print(element[1], element[0])
