@@ -34,6 +34,7 @@ def processing(sql_data, cursor):
 
     results_f = []
     for element in sql_data:
+        print(sql_data)
         a, b = element[-2:]
         new_string = ' | '.join([f'{owner} ({value})' for owner, value in zip(a.split(','), b.split(','))])
         new_tup = (*element[:-2], new_string)
