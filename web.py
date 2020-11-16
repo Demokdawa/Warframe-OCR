@@ -42,6 +42,7 @@ def processing(sql_data, cursor):
 
     for element in results_f: # Pour chaque row
         list1 = []
+        print(element[1], element[0])
         cursor.execute('''SELECT c_1, c_2, c_3, u_1, u_2, r_1 FROM relic_RelicData WHERE Era = %s AND Name = %s''', (element[1], element[0],))
         result = cursor.fetchone() #tuple
         list1.extend(result)

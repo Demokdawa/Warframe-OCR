@@ -93,35 +93,35 @@ def ocr_data_validation(era, name, quality):
         # Check for Name
         if era == 'Lith':
             if name not in ref_list_lith:
-                print('Failed name check')
+                print('Failed name check for Lith')
                 return False
             else:
                 if quality not in ref_list_quality:
-                    print('Failed quality check')
+                    print('Failed quality check for Lith')
                 else:
                     return True
         if era == 'Meso':
             if name not in ref_list_meso:
-                print('Failed name check')
+                print('Failed name check for Meso')
             else:
                 if quality not in ref_list_quality:
-                    print('Failed quality check')
+                    print('Failed quality check for Meso')
                 else:
                     return True
         if era == 'Neo':
             if name not in ref_list_neo:
-                print('Failed name check')
+                print('Failed name check for Neo')
             else:
                 if quality not in ref_list_quality:
-                    print('Failed quality check')
+                    print('Failed quality check for Neo')
                 else:
                     return True
         if era == 'Axi':
             if name not in ref_list_axi:
-                print('Failed name check')
+                print('Failed name check for Axi')
             else:
                 if quality not in ref_list_quality:
-                    print('Failed quality check')
+                    print('Failed quality check for Axi')
                 else:
                     return True
 
